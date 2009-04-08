@@ -25,11 +25,11 @@ seen the code before understand the structure of the code.  Code organization sh
 simply for ease of including.  Code files which are intimately tied to each other should be located as "near" 
 each other as reasonably possible.
 
-= 4. Business logic should live in a controller = 
+= 4. Business logic should be orthogonal = 
 
 Customizable behavior of the system should be centrally located in controllers and actions, not buried in 
 models.  This creates a top-down view of the behavior of any HTTP request and lends to a totality of 
-understanding a complete request without tracing through many models and libraries.
+understanding a complete request without tracing through many models and libraries.  Complex chains of nested function calls results in brittle, oblique code.
 
 = 5. Customizing should have one clear way =
 
