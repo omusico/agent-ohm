@@ -24,3 +24,9 @@ Organization of files and directories should be done in a way which helps develo
 seen the code before understand the structure of the code.  Code organization should not be done 
 simply for ease of including.  Code files which are intimately tied to each other should be located as "near" 
 each other as reasonably possible.
+
+= Business logic should live in a controller = 
+
+Customizable behavior of the system should be centrally located in controllers and actions, not buried in 
+models.  This creates a top-down view of the behavior of any HTTP request and lends to a totality of 
+understanding a complete request without tracing through many models and libraries.
