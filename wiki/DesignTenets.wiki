@@ -1,0 +1,26 @@
+#guiding principles for coding in Agent-Ohm
+
+= Overview =
+
+These design tenets will act as a litmus test for every proposed change to the source code.
+If any proposed change does not relate to one of the tenets, then it will not be included in the project.
+
+
+= Style doesn't trump efficiency =
+
+Coding styles should not be employed if they have a detrimental effect on the execution of the code.  
+Furthermore, if a certain coding style uses more resources than another coding style, the other coding style 
+is preferred.
+
+= Sub-classes are not a design pattern = 
+
+A large, complex project needs to employ industry standard design patterns to be widely understood by other 
+developers.  Continually extending classes in a parent-child relationship does not constitute an acceptable 
+design pattern.
+
+= Outside developers should have a sense of mastery over code = 
+
+Organization of files and directories should be done in a way which helps developers who have never 
+seen the code before understand the structure of the code.  Code organization should not be done 
+simply for ease of including.  Code files which are intimately tied to each other should be located as "near" 
+each other as reasonably possible.
