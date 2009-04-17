@@ -1,0 +1,27 @@
+= List of Major Changes to Magento =
+
+=== File System Change ===
+
+In Magento, class names directly mapped to sub-directories and file names.  So a class like 
+
+  X_Y_Z
+
+was located in a directory 
+
+  mage/x/y/z.php  
+
+(capitalization removed for this explanation)
+
+This might seem rationale with the above example, but when you have very long class names like:
+
+  Mage_Core_Model_Resource_Abstract
+
+It can get confusing to constantly be changed directories for no other reason than class names.  Plus, in your IDE or text editor, when the file names are exceedingly long you will only see the beginning and end.  So, if you are tracking down a problem you may have 3-4 files opened which are just labeled "Abstract.php".
+
+Agent-Ohm changes the file layout to pivot of the major "kinds" of classes:  Models, Blocks, Helpers, Controllers.  In Agento-Ohm a class like
+
+  X_Y_Z
+
+Will be in a directory like
+
+  mage/x/y_z.php
