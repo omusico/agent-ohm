@@ -19,3 +19,7 @@ The cache system needs to not duplicate itself 4 times over.  This causes too mu
 ===Rationale===
 
 The cache system creates 4 copies of all the data under the <default> tag for every module.  This creates an incredibly huge hit to the system every request.  If a system can be developed which provides the same convenience as coping the <default> node w/o creating an XML structure 4 times the size and without using 4 times the memory, we should use it.
+
+
+==Fix the Design==
+Drop everything for 960.gs and JQuery based design.  The sample store is a sample, it's not really meant for full production use and shouldn't try to be.  It should be a reference for how to do everything, but also how to make your own.  Being extra complicated doesn't help anyone.
