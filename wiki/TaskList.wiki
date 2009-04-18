@@ -1,0 +1,21 @@
+=Things that aren't done yet=
+
+==No Blocks Fork==
+Trim the blocks system down to around 5 core blocks.
+
+  * CMS/Page
+  * Core/Text_List
+  * Core/Html
+  * Core/Template
+  * Core/Abstract
+
+===Rationale===
+
+The blocks system uses about 50% of the resources of a Magento request when the cache is fully primed.  Most blocks are simply facade pattern gateways to other parts of the system.  This keeps the syntax inside a .phtml template file short and neat.  A better facading block could be made which handles calls to functions not known at run-time can be made.  Cycling through the Mage::registry() might be a good place to start.
+
+==Fix the Cache==
+The cache system needs to not duplicate itself 4 times over.  This causes too much resource waste.  A more intelligent getNode() function can search through different parts of the DOM to find the proper node - OR - we can switch to using DOM functions instead of SimpleXML and copy the DOM branches around at runtime.
+
+===Rationale===
+
+The cache system creates 4 copies of all the data under the <default> tag for every module.  This creates an incredibly huge hit to the system every request.  If a system can be developed which provides the same convenience as coping the <default> node w/o creating an XML structure 4 times the size and without using 4 times the memory, we should use it.
