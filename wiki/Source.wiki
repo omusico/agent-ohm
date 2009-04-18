@@ -14,13 +14,14 @@ You will get a directory called "agent-ohm".  That's it.
 
 ==How do I make my own AO checkout that I can customize but still keep up to date?==
 
-1. Follow step 1 from the previous question
-2. git checkout -b mycustomchanges
-3.  .... do your custom changes.
+  # Follow step 1 from the previous question
+  # git checkout -b mycustomchanges
+  #  .... do your custom changes.
 
 To keep up to date:
 
-1. git status (make sure it's clean)
-2. git checkout master
-3. git pull origin master
-4. git rebase maseter mycustomchanges
+  # git status (make sure it's clean)
+  # git checkout master
+  # git pull origin
+  # git checkout mycustomchanges (no -b this time)
+  # git rebase master
